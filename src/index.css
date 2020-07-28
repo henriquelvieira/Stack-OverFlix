@@ -4,6 +4,7 @@
 }
 
 :root {
+  --background: #141414;
   --primary: #2A7AE4;
   --primary: #F48024;
   --secondary: #2F3337;
@@ -26,3 +27,9 @@ body {
 a {
   color: inherit;
 } 
+
+#root {
+  min-height: calc(100vh - var(--bodyPaddingTop));
+  display: flex;
+  flex-direction: column;
+}
