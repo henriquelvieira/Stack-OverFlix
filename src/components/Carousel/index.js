@@ -3,13 +3,15 @@ import { VideoCardGroupContainer, VideoCardList, Title, ExtraLink } from './styl
 import VideoCard from './components/VideoCard';
 
 function VideoCardGroup({
-  ignoreFirstVideo,
-  category,
-}) {
+                          ignoreFirstVideo,
+                          category,
+                        }) {
+  
   const categoryTitle = category.titulo;
   const categoryColor = category.cor;
   const categoryExtraLink = category.link_extra;
   const videos = category.videos;
+
   return (
     <VideoCardGroupContainer>
       {categoryTitle && (

@@ -1,6 +1,7 @@
 .Logo {
     max-width: 168px;
   }
+
   @media (max-width: 800px) {
     .Logo {
       max-width: 105px;
@@ -30,9 +31,10 @@
     --bodyPaddingTop: 94px;
     padding-top: var(--bodyPaddingTop);
   }
+  
   @media (max-width: 800px) {
     .Menu {
-      height: 40px;
+      height: 55px;
       justify-content: center;
     }
     body {
