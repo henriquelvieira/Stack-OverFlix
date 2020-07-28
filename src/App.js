@@ -5,6 +5,22 @@ import BannerMain from './components/BannerMain';
 import Carousel from './components/Carousel';
 import Footer from './components/Footer';
 
+
+
+function Categories (){
+  
+  let vArrayCategories = dadosIniciais;
+
+  return vArrayCategories.categorias.map(Categorie => {  
+    let vCategorie =  <Carousel  category={Categorie} />;
+
+    return vCategorie;
+
+  });
+
+}
+
+
 function App() {
   return (
     <div style={{ background: "#141414" }}>
@@ -15,31 +31,9 @@ function App() {
         url={dadosIniciais.categorias[0].videos[0].url}
         videoDescription={"O que é Front-end"}
       />
+      
+      {Categories ()}
 
-      <Carousel 
-        ignoreFirstVideo
-        category={dadosIniciais.categorias[0]}
-      />
-
-      <Carousel 
-        category={dadosIniciais.categorias[1]}
-      />
-
-      <Carousel 
-        category={dadosIniciais.categorias[2]}
-      />
-
-      <Carousel 
-        category={dadosIniciais.categorias[3]}
-      />
-
-      <Carousel 
-        category={dadosIniciais.categorias[4]}
-      />
-
-      <Carousel 
-        category={dadosIniciais.categorias[5]}
-      />
 
       <Footer />
 
