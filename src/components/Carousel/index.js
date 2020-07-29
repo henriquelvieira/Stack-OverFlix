@@ -14,7 +14,7 @@ function Carousel({
   const videos = category.videos;
   
   return (
-    <VideoCardGroupContainer>
+    <VideoCardGroupContainer >
       {categoryTitle && (
         <>
           <Title style={{ backgroundColor: categoryColor || 'red' }}>

@@ -1,18 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+//import { Link } from 'react-router-dom';
+
 
 //Components
 import Layout from '../../components/Layout';
-//import { ContentAreaContainer } from '../../components/ContentAreaContainer';
+import Container from '../../components/Conteiner/';
 
 
 
 function CadastroCategoria() {
+    
+    const [nomeCategoria, setNomeCategoria] = useState(); 
+    
+    
+    
     return (
         
         <Layout>
-            <h2>Cadastro de Categoria</h2>
-            
+            <Container>
+                <h3>Cadastro da Categoria: {nomeCategoria}</h3>
+            </Container>
 
         </Layout>
 
