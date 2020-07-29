@@ -11,8 +11,8 @@ const Main = styled.main`
   color: var(--white);
   flex: 1;
   padding-top: 50px;
-  padding-left: 5%;
-  padding-right: 5%;
+  --padding-left: 5%;
+  --padding-right: 5%;
 `;
 
 
