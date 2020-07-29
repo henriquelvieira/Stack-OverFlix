@@ -10,7 +10,12 @@ import Container from '../../components/Conteiner/';
 
 function CadastroCategoria() {
     
-    const [nomeCategoria, setNomeCategoria] = useState(); 
+    const initialvalues = {
+        name: ''
+    }
+
+    const [categories, setCategories] = useState(); 
+    const [values, setValues] = useState(initialvalues); 
     
     
     
@@ -18,7 +23,7 @@ function CadastroCategoria() {
         
         <Layout>
             <Container>
-                <h3>Cadastro da Categoria: {nomeCategoria}</h3>
+                <h3>Cadastro da Categoria: {values.name}</h3>
             </Container>
 
         </Layout>
