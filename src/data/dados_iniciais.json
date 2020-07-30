@@ -1,7 +1,7 @@
 {
   "categorias": [
     {
-      "titulo": "Front End",
+      "titulo": "React",
       "link": "https://www.alura.com.br/formacao-front-end",
       "cor": "#6BD1FF",
       "link_extra": {
@@ -10,145 +10,117 @@
       },
       "videos": [
         {
-          "titulo": "O que faz uma desenvolvedora front-end? #HipstersPontoTube",
-          "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
+          "titulo": "Formulários em React com Engenharia Reversa no Formik",
+          "url": "https://www.youtube.com/watch?v=cMq6k7ymv2s&t=1s"
+        },
+        {
+          "titulo": "Como fazer validações de formulário com React?",
+          "url": "https://www.youtube.com/watch?v=-nYNd6EuZHU"
+        },
+        {
+          "titulo": "Speedrun: Do Zero ao React | Como fazer um React e aprender a ideia do Virtual DOM na prática",
+          "url": "https://www.youtube.com/watch?v=5MzOCxSWrrc"
+        },
+        {
+          "titulo": "Gerando rotas estáticas e dinâmicas com Nextjs feat. Static Paths e Dynamic Routes | Pokedex #02",
+          "url": "https://www.youtube.com/watch?v=x5Hs8kXlktM"
         },
         {
           "titulo": "SEO com React",
           "url": "https://www.youtube.com/watch?v=c8mVlakBESE"
         },
         {
-          "titulo": "Componentização com VanillaJS #AluraMais",
-          "url": "https://www.youtube.com/watch?v=LatCKpcOMak"
-        },
-        {
-          "titulo": "Pare de chutar e aprenda a display: inline #01",
-          "url": "https://www.youtube.com/watch?v=5PS6ku8NzIE"
-        },
-        {
-          "titulo": "Template String: Interpolando strings com JavaScript #AluraMais",
-          "url": "https://www.youtube.com/watch?v=ORI_HTXaIw0"
-        },
-        {
-          "titulo": "Qual é a melhor linguagem de programação? #HipstersPontoTube",
-          "url": "https://www.youtube.com/watch?v=Uh-GNH-t89w"
-        },
-        {
-          "titulo": "Novidades do Angular v9",
-          "url": "https://www.youtube.com/watch?v=34uHo7hFmG0"
-        },
-        {
-          "titulo": "Base para aprender os frameworks",
-          "url": "https://www.youtube.com/watch?v=QzDjdlF1BQI"
-        }        
+          "titulo": "React com CMS via Google Spreadsheets e Nextjs | Top Jogos favoritos DevSoutinho",
+          "url": "https://www.youtube.com/watch?v=5t2gq3xJZ9o"
+        }
+
+        
       ]
     },
     {
-      "titulo": "Back End",
+      "titulo": "Nodejs",
       "cor": "#00C86F",
       "link_extra": {
-        "text": "Cursos de Back End na Alura",
+        "text": "",
         "url": "https://www.alura.com.br/cursos-online-programacao"
       },
       "videos": [
         {
-          "titulo": "PERCURSO em NÍVEL em ÁRVORE BINÁRIA | Estruturas de Dados #14",
-          "url": "https://www.youtube.com/watch?v=UOK7nS2E9xM"
+          "titulo": "Node.js // Dicionário do Programador",
+          "url": "https://www.youtube.com/watch?v=vYekSMBCCiM"
         },
         {
-          "titulo": "Coders4Tips - S01E04: GitHub CLI - Uma Nova Experiência no Github!",
-          "url": "https://www.youtube.com/watch?v=6o6-bKOZOEY"
+          "titulo": "O que é Node JS?",
+          "url": "https://www.youtube.com/watch?v=GKR6uSvEj8w"
         },
         {
-          "titulo": "Programei 4 robôs que criam vídeos para mim no YouTube",
-          "url": "https://www.youtube.com/watch?v=kjhu1LEmRpY"
-        },
-        {
-          "titulo": "API: Dicionário do Programador",
-          "url": "https://www.youtube.com/watch?v=vGuqKIRWosk"
-        }, 
-        {
-          "titulo": "Usando Git Direito",
-          "url": "https://www.youtube.com/watch?v=6OokP-NE49k"
+          "titulo": "Apps em NODE.JS rodando no VPS da HostGator (MUITO FÁCIL)",
+          "url": "https://www.youtube.com/watch?v=qP2QHfWr35U&t=301s"
         }
+
+        
+
+        
       ]
     },
     {
-      "titulo": "Data Science e Inteligência Artificial",
+      "titulo": "Javascript",
       "cor": "#9cd33b",
       "link_extra": {
-        "text": "Cursos de Data Science na Alura",
+        "text": "",
         "url": "https://www.alura.com.br/formacao-data-science"
       },
       "videos": [
         {
-          "titulo": "Teste de Turing",
-          "url": "https://www.youtube.com/watch?v=BaPGU4JWa34"
+          "titulo": "Eu quero saber se você consegue responder essas 3 perguntas de JavaScript!",
+          "url": "https://www.youtube.com/watch?v=QVrrqgDhhu4"
+        },
+
+        {
+          "titulo": "O futuro do JavaScript é programar dessa forma aqui!",
+          "url": "https://www.youtube.com/watch?v=jA5XX7Fd8Ys"
         },
         {
-          "titulo": "O que é Data Science?",
-          "url": "https://www.youtube.com/watch?v=5b9Z8toVaAU&t=9s"
+          "titulo": "Arrow Function do JavaScript, simples e feliz! #02",
+          "url": "https://www.youtube.com/watch?v=3EkS9-P3cIM"
         },
         {
-          "titulo": "Melhor forma de aprender Python",
-          "url": "https://www.youtube.com/watch?v=Gojqw9BQ5qY"
+          "titulo": "Mais 3 Formas de Como Usar Arrays no JavaScript que Você Precisa Conhecer // Mão no Código #32",
+          "url": "https://www.youtube.com/watch?v=O9wvnvyltgs"
         },
         {
-          "titulo": "Como ingressar no mercado de Data Science?",
-          "url": "https://www.youtube.com/watch?v=gxyjGmOV540"
-        }
+          "titulo": "Desvendando DEFINITIVAMENTE as Promises em JavaScript // Mão no Código #21",
+          "url": "https://www.youtube.com/watch?v=nRJhc6vXyK4"
+        }  
+
       ]
     },
     {
-      "titulo": "Filmes",
+      "titulo": "I.A",
       "cor": "orange",
       "videos": [
         {
-          "titulo": "Interestellar",
-          "url": "https://www.youtube.com/watch?v=frD_IiY_A3E"
+          "titulo": "Agora Aquela I.A. Foi Longe Demais (e vai mudar o jeito que você trabalha)",
+          "url": "https://www.youtube.com/watch?v=pbVwH8o837A"
         },
         {
-          "titulo": "Gattaca",
-          "url": "https://www.youtube.com/watch?v=Dl0tYLbrhhs"
+          "titulo": "Lembra Daquela I.A. Que Programava Sozinha? Então...",
+          "url": "https://www.youtube.com/watch?v=Cr89Oz0TWQM"
         },
         {
-          "titulo": "A Chegada",
-          "url": "https://www.youtube.com/watch?v=rNciXGzYZms"
+          "titulo": "E Agora? Nova Inteligência Artificial Começou a Programar Sozinha",
+          "url": "https://www.youtube.com/watch?v=KdgKQoq1jk0"
         },
         {
-          "titulo": "Feitiço do Tempo",
-          "url": "https://www.youtube.com/watch?v=zi8d69P9NvI"
+          "titulo": "Eu testei uma I.A. que quer substituir você!",
+          "url": "https://www.youtube.com/watch?v=-uUTrEIeOHo"
+        },
+        {
+          "titulo": "Desistimos dos Carros Voadores? Como serão os Veículos em 2030?",
+          "url": "https://www.youtube.com/watch?v=5lTo30Gm9w4"
         }
-      ]
-    },
-    {
-      "titulo": "Games",
-      "cor": "red",
-      "link_extra": {
-        "text": "Formação de Jogos na Alura",
-        "url": "https://www.alura.com.br/formacao-jogos-unity"
-      },
-      "videos": [
-        {
-          "titulo": "Final Fantasy 7",
-          "url": "https://www.youtube.com/watch?v=I_ATSCTnUD8"
-        },
-        {
-          "titulo": "Assassins Creed Valhalla",
-          "url": "https://www.youtube.com/watch?v=KDfdjB9uL0U"
-        },
-        {
-          "titulo": "God of War 4",
-          "url": "https://www.youtube.com/watch?v=FyIwEFXOcaE"
-        },
-        {
-          "titulo": "Resident Evil 8",
-          "url": "https://www.youtube.com/watch?v=JSapXD9vxYA"
-        },
-        {
-          "titulo": "Pokémon Let's Go Pikachu/Eevee",
-          "url": "https://www.youtube.com/watch?v=L56q_k2ydrs"
-        }
+
+        
       ]
     },
     {
