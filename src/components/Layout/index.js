@@ -1,8 +1,7 @@
-
 import React from 'react';
 import styled from 'styled-components';
 
-//Components
+// Components
 import Menu from '../Menu';
 import Footer from '../Footer';
 
@@ -15,21 +14,18 @@ const Main = styled.main`
   --padding-right: 5%;
 `;
 
-
 function Layout(props) {
-    return (
-        <>
-            <Menu />
+  return (
+    <>
+      <Menu />
 
-            <Main>
-                {props.children}
-            </Main>
-            
-            <Footer />
-        </>
-    )
+      <Main>
+        {props.children}
+      </Main>
 
-
-};
+      <Footer />
+    </>
+  );
+}
 
 export default Layout;
