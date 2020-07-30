@@ -25,13 +25,17 @@ function Categories (){
 
 
 function Home() {
+  
+  let IdCategorieMain = Math.floor(Math.random() * (dadosIniciais.categorias.length ));
+  
+  
   return (
     
     <Layout>
     
           <BannerMain 
-            videoTitle={dadosIniciais.categorias[0].videos[0].titulo}
-            url={dadosIniciais.categorias[0].videos[0].url}
+            videoTitle={dadosIniciais.categorias[IdCategorieMain].videos[0].titulo}
+            url={dadosIniciais.categorias[IdCategorieMain].videos[0].url}
             videoDescription={"O que é Front-end"}
           />
         
