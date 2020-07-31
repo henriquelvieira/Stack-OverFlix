@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 // Components
@@ -7,25 +7,33 @@ import Container from '../../components/Conteiner';
 import FormField from '../../components/FormField';
 import Button from '../../components/Button';
 
+import useForm from '../../hooks/useForm';
+
 function CadastroCategoria() {
   const initialvalues = {
-    nome: '',
+    titulo: '',
     descricao: '',
     cor: '',
   };
 
+  const { values, handleInputChange, clearForm } = useForm(initialvalues);
+
   const [categories, setCategories] = useState([]);
-  const [values, setValues] = useState(initialvalues);
 
-  const handleInputChange = (event) => {
-    const fieldKey = event.target.getAttribute('name');
-    const fieldValue = event.target.value;
-
-    setValues({
-      ...values,
-      [fieldKey]: fieldValue,
-    });
-  };
+  useEffect(() => {
+    if (window.location.href.includes('localhost')) {
+      const URL = 'https://api-fake-json-server.herokuapp.com/categorias';
+      fetch(URL)
+        .then(async (respostaDoServer) => {
+          if (respostaDoServer.ok) {
+            const resposta = await respostaDoServer.json();
+            await setCategories(resposta);
+            return;
+          }
+          throw new Error('Não foi possível pegar os dados');
+        });
+    }
+  }, []);
 
   const handleOnSubmit = async (event) => {
     event.preventDefault();
@@ -36,7 +44,7 @@ function CadastroCategoria() {
         values,
       ]);
 
-      setValues(initialvalues);
+      clearForm();
     }
   };
 
@@ -54,8 +62,8 @@ function CadastroCategoria() {
           <FormField
             label="Nome da Categoria"
             type="text"
-            name="nome"
-            value={values.nome}
+            name="titulo"
+            value={values.titulo}
             onChange={handleInputChange}
           />
 
@@ -81,7 +89,7 @@ function CadastroCategoria() {
 
         <ul>
           {categories.map((categorie) => (
-            <li key={`${categorie.nome}`}>{categorie.nome}</li>
+            <li key={`id_${categorie.id}`}>{categorie.titulo}</li>
           ))}
         </ul>
 
