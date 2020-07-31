@@ -38,7 +38,7 @@ function CadastroCategoria() {
   const handleOnSubmit = async (event) => {
     event.preventDefault();
 
-    if (values.nome) {
+    if (values.titulo) {
       await setCategories([
         ...categories,
         values,
