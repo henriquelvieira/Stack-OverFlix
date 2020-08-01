@@ -15,7 +15,7 @@ const Main = styled.main`
   --padding-right: 5%;
 `;
 
-function Layout({ showButtonNewVideo, showFooter,  children }) {
+function Layout({ showButtonNewVideo, showFooter, children }) {
   return (
     <>
       <Menu showButtonNewVideo={showButtonNewVideo} />

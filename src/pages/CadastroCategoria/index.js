@@ -87,11 +87,27 @@ function CadastroCategoria() {
 
         </form>
 
-        <ul>
-          {categories.map((categorie) => (
-            <li key={`id_${categorie.id}`}>{categorie.titulo}</li>
-          ))}
-        </ul>
+        <table>
+          <thead>
+            <tr>
+              <td>Nome</td>
+              <td>Descrição</td>
+              <td>Editar</td>
+              <td>Remover</td>
+            </tr>
+          </thead>
+          <tbody>
+            {categories.map((categorie) => (
+              <tr>
+                <td key={`id_${categorie.id}`}>{categorie.titulo}</td>
+                <td>{categorie.descricao}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
 
         <Link to="/">
           Ir para home

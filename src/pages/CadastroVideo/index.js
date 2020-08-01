@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
+import {
+  ErrorMessage, Formik, Form as FormikForm, Field,
+} from 'formik';
 import useForm from '../../hooks/useForm';
+
 import FormField from '../../components/FormField';
 import Button from '../../components/Button';
 import videosRepository from '../../repositories/videos';
@@ -12,11 +16,14 @@ import Layout from '../../components/Layout';
 import Container from '../../components/Conteiner';
 // import { ContentAreaContainer } from '../../components/ContentAreaContainer';
 
+// Libs p/ Formulário
+import validaForm from './validation';
+
 function CadastroVideo() {
   const initialvalues = {
-    titulo: 'Video padrão',
-    url: 'https://www.youtube.com/watch?v=jOAU81jdi-c',
-    categoria: 'Front End',
+    titulo: '',
+    url: '',
+    categoria: '',
   };
 
   const history = useHistory();
@@ -58,7 +65,9 @@ function CadastroVideo() {
       <Container>
 
         <h2>Cadastro de Video</h2>
-
+        {/*
+       <Formik initialValues={initialvalues} validationSchema={validaForm} onSubmit={handleOnSubmit}>
+          <FormikForm className="user"> */}
         <form onSubmit={handleOnSubmit}>
 
           <FormField
@@ -86,6 +95,10 @@ function CadastroVideo() {
           <Button type="submit">
             Cadastrar
           </Button>
+          {/*
+          </FormikForm>
+        </Formik>
+          */}
         </form>
 
         <br />

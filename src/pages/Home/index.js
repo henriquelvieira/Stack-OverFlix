@@ -8,9 +8,11 @@ import BannerMain from '../../components/BannerMain';
 import Carousel from '../../components/Carousel';
 import categoriasRepository from '../../repositories/categorias';
 
+import ProgressLinear from '../../components/ProgressLinear';
+
 function Home() {
   const [dadosIniciais, setDadosIniciais] = useState([]);
-  const IdCategorieMain = Math.floor(Math.random() * (dadosIniciais.length));
+  // const IdCategorieMain = Math.floor(Math.random() * (dadosIniciais.length));
 
   useEffect(() => {
     categoriasRepository.getAllWithVideos()
@@ -26,7 +28,7 @@ function Home() {
 
     <Layout showButtonNewVideo showFooter>
 
-      {dadosIniciais.length === 0 && (<div>Loading...</div>)}
+      {dadosIniciais.length === 0 && (<ProgressLinear />)}
 
       {dadosIniciais.map((categoria, indice) => {
         if (indice === 0) {
