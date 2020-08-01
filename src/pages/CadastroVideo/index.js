@@ -54,7 +54,7 @@ function CadastroVideo() {
 
   return (
 
-    <Layout>
+    <Layout showButtonNewVideo={false}>
       <Container>
 
         <h2>Cadastro de Video</h2>

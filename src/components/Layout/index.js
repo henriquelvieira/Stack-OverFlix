@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 // Components
 import Menu from '../Menu';
@@ -14,18 +15,30 @@ const Main = styled.main`
   --padding-right: 5%;
 `;
 
-function Layout(props) {
+function Layout({ showButtonNewVideo, showFooter,  children }) {
   return (
     <>
-      <Menu />
+      <Menu showButtonNewVideo={showButtonNewVideo} />
 
       <Main>
-        {props.children}
+        {children}
       </Main>
 
-      <Footer />
+      {showFooter && <Footer />}
     </>
   );
 }
+
+Layout.defaultProps = {
+  showButtonNewVideo: false,
+  showFooter: false,
+};
+
+Layout.propTypes = {
+  showButtonNewVideo: PropTypes.bool,
+  showFooter: PropTypes.bool,
+  children: PropTypes.element.isRequired,
+
+};
 
 export default Layout;

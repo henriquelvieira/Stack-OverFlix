@@ -24,7 +24,7 @@ function Home() {
 
   return (
 
-    <Layout>
+    <Layout showButtonNewVideo showFooter>
 
       {dadosIniciais.length === 0 && (<div>Loading...</div>)}
 

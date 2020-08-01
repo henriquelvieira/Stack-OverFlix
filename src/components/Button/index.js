@@ -33,6 +33,7 @@ transition: opacity .3s;
         border-radius: 0;
         border: 0;
         text-align: center;
+        width: 100%;
     }
 }
 
