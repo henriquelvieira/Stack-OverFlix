@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 const Container = styled.ul`
   background-color: var(--black);
+  border-top: 2px solid;
   padding: 0;
   margin: 0;
   .slick-prev,
@@ -40,8 +41,9 @@ export const SliderItem = styled.li`
 
 `;
 
-const Slider = ({ children }) => (
-  <Container>
+const Slider = ({ children, color }) => (
+
+  <Container style={{ borderColor: color || 'red' }} >
     <SlickSlider {...{
       dots: false,
       infinite: false,

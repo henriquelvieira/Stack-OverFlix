@@ -42,7 +42,7 @@ export const VideoCardList = styled.ul`
   display: flex;
   overflow-x: auto;
   --overflow: hidden;
-  flex-direction: row;
+  flex-direction: row;  
   
   li {
     margin-right: 8px;
@@ -54,4 +54,5 @@ export const VideoCardGroupContainer = styled.section`
   min-height: 197px;
   --margin-left: 1%;
   margin-bottom: 16px;
+  border-bottom: 2px solid;
 `;
