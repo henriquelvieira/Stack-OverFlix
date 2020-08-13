@@ -53,6 +53,7 @@ export const VideoCardGroupContainer = styled.section`
   color: white;
   min-height: 197px;
   --margin-left: 1%;
+  margin-top: 10px;
   margin-bottom: 16px;
   border-bottom: 2px solid;
 `;

@@ -20,6 +20,8 @@ transition: opacity .3s;
 &:focus {
     opacity: .5;
     font-size: 18px;
+    text-decoration: none;
+    color: var(--primary);
     }
 
 @media (max-width: 800px) {

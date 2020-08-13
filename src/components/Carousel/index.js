@@ -9,22 +9,13 @@ function Carousel({
   ignoreFirstVideo,
   category,
 }) {
-  function getYouTubeId(youtubeURL) {
-    return youtubeURL
-      .replace(
-        /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/,
-        '$7',
-      )
-  }
-
   const categoryTitle = category.titulo;
   const categoryColor = category.cor;
   const categoryExtraLink = category.link_extra;
   const { videos } = category;
 
-
   return (
-    <VideoCardGroupContainer style={{ borderColor: categoryColor || 'red' }} >
+    <VideoCardGroupContainer style={{ borderColor: categoryColor || 'red' }}>
       {categoryTitle && (
         <>
           <Title style={{ backgroundColor: categoryColor || 'red' }}>
@@ -38,21 +29,17 @@ function Carousel({
             )}
         </>
       )}
-      
-      <Slider color={categoryColor || 'red' }>
+
+      <Slider color={categoryColor || 'red'}>
         {videos.map((video, index) => {
           if (ignoreFirstVideo && index === 0) {
             return null;
           }
-          // const youTubeID = getYouTubeId(video.url);
+
           return (
 
             <SliderItem key={video.titulo}>
-              {/*
-              <VideoIframeResponsive
-                youtubeID={youTubeID}
-              />
-*/}
+
               <VideoCard
                 videoTitle={video.titulo}
                 videoURL={video.url}

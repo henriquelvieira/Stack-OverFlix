@@ -32,5 +32,4 @@ export const VideoCardContainer = styled.a`
   }
 `;
 
-
 export default VideoCardContainer;

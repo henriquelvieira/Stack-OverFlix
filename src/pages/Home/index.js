@@ -10,9 +10,11 @@ import categoriasRepository from '../../repositories/categorias';
 
 import ProgressLinear from '../../components/ProgressLinear';
 
+
 function Home() {
   const [dadosIniciais, setDadosIniciais] = useState([]);
   // const IdCategorieMain = Math.floor(Math.random() * (dadosIniciais.length));
+
 
   useEffect(() => {
     categoriasRepository.getAllWithVideos()
