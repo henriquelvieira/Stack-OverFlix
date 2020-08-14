@@ -101,9 +101,9 @@ function CadastroCategoria() {
               <tr>
                 <td key={`id_${categorie.id}`}>{categorie.titulo}</td>
                 <td>{categorie.descricao}</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td />
+                <td />
+                <td />
               </tr>
             ))}
           </tbody>
