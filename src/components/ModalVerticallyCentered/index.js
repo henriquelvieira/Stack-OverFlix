@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 
 import './styles.css';
 
@@ -25,13 +25,12 @@ function ModalVerticallyCentered(props) {
           {props.title}
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body
-        className="Modal"
-      >
+      <Modal.Body className="Modal">
         {props.children}
       </Modal.Body>
       <Modal.Footer className="Modal">
         <button
+          type="button"
           onClick={props.onHide}
           className="ModalButton"
         >

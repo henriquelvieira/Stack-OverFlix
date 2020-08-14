@@ -1,21 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { VideoCardContainer } from './styles';
 
 import ModalVerticallyCentered from '../ModalVerticallyCentered';
 import VideoIframeResponsive from '../VideoIframeResponsive';
 
-function getYouTubeId(youtubeURL) {
-  return youtubeURL
-    .replace(
-      /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/,
-      '$7',
-    );
-}
+import useModal from '../../hooks/useModal';
 
 function VideoCard({ videoTitle, videoURL, categoryColor }) {
   const image = `https://img.youtube.com/vi/${getYouTubeId(videoURL)}/hqdefault.jpg`;
 
-  const [modalShow, setModalShow] = React.useState(false);
+  const { modalShow, handleShow, handleHide } = useModal();
 
   function getYouTubeId(youtubeURL) {
     return youtubeURL
@@ -29,9 +24,9 @@ function VideoCard({ videoTitle, videoURL, categoryColor }) {
     <>
       <VideoCardContainer
         url={image}
-        //href={videoURL}
+        // href={videoURL}
         target="_blank"
-        onClick={() => setModalShow(true)}
+        onClick={() => handleShow()}
         style={{ borderColor: categoryColor || 'red' }}
         title={videoTitle}
       />
@@ -39,14 +34,20 @@ function VideoCard({ videoTitle, videoURL, categoryColor }) {
       <ModalVerticallyCentered
         show={modalShow}
         title={videoTitle}
-        onHide={() => setModalShow(false)}
+        onHide={() => handleHide()}
       >
-        <VideoIframeResponsive
-          youtubeID={getYouTubeId(videoURL)}
-        />
+        <VideoIframeResponsive youtubeID={getYouTubeId(videoURL)} />
+
       </ModalVerticallyCentered>
+
     </>
   );
 }
 
+VideoCard.propTypes = {
+  videoTitle: PropTypes.string.isRequired,
+  videoURL: PropTypes.string.isRequired,
+  categoryColor: PropTypes.string.isRequired,
+
+};
 export default VideoCard;
