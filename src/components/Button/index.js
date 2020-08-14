@@ -36,7 +36,14 @@ transition: opacity .3s;
         border: 0;
         text-align: center;
         width: 100%;
-    }
+
+    }&:hover,
+    &:focus {
+        opacity: .5;
+        font-size: 18px;
+        text-decoration: none;
+        color: var(--black);
+        }
 }
 
 `;

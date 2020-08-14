@@ -39,16 +39,15 @@ const Input = styled.input`
   color: #F5F5F5;
   display: block;
   width: 100%;
-  height: 57px;
-  font-size: 18px;
-  
+  height: 47px;
+  font-size: 16px;
   outline: 0;
   border: 0;
   border-top: 4px solid transparent;
   border-bottom: 4px solid #53585D;
   
   padding: 16px 16px;
-  margin-bottom: 45px;
+  margin-bottom: 10px;
   
   resize: none;
   border-radius: 4px;

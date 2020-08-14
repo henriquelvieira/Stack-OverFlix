@@ -27,6 +27,7 @@
     border-radius: 5px;
     text-decoration: none;
     transition: opacity .3s;
+    align-self: end !important;
 }
     
 .ModalButton:hover,

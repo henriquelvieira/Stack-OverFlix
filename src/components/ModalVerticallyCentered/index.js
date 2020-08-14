@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Modal from 'react-bootstrap/Modal';
+
 // import Button from 'react-bootstrap/Button';
 
 import './styles.css';
@@ -28,6 +29,8 @@ function ModalVerticallyCentered(props) {
       <Modal.Body className="Modal">
         {props.children}
       </Modal.Body>
+      {props.showFooter
+      && (
       <Modal.Footer className="Modal">
         <button
           type="button"
@@ -37,8 +40,14 @@ function ModalVerticallyCentered(props) {
           Fechar
         </button>
       </Modal.Footer>
+      )}
     </Modal>
   );
 }
+
+
+ModalVerticallyCentered.defaultProps = {
+  showFooter: true,
+};
 
 export default ModalVerticallyCentered;
