@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
+import useModal from '../../hooks/useModal';
 import useForm from '../../hooks/useForm';
 
 import FormField from '../FormField';
+import Button from '../Button';
 
-// import Button from '../Button';
 import videosRepository from '../../repositories/videos';
 import categoriasRepository from '../../repositories/categorias';
 
@@ -20,9 +21,12 @@ function FormCadastroVideo() {
   };
 
   const history = useHistory();
+
   const [categorias, setCategorias] = useState([]);
   const categoryTitles = categorias.map(({ titulo }) => titulo);
   const { handleInputChange, clearForm, values } = useForm(initialvalues);
+
+
 
   useEffect(() => {
     categoriasRepository
@@ -88,9 +92,10 @@ function FormCadastroVideo() {
       <br />
       <br />
 
-      <Link to="/cadastro/categoria">
+      <Link to="/categorias">
         Cadastrar Categoria
       </Link>
+
     </>
 
   );

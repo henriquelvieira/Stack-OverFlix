@@ -25,7 +25,6 @@ function Menu({ showButtonNewVideo }) {
       {showButtonNewVideo && (
       <Button
         as={Link}
-        // to="/cadastro/video"
         className="ButtonLink"
         onClick={() => handleShow()}
       >
