@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 // Components
 import Layout from '../../components/Layout';
@@ -9,6 +9,8 @@ import Button from '../../components/Button';
 
 import useForm from '../../hooks/useForm';
 
+import categoriasRepository from '../../repositories/categorias';
+
 function CadastroCategoria() {
   const initialvalues = {
     titulo: '',
@@ -16,23 +18,17 @@ function CadastroCategoria() {
     cor: '',
   };
 
-  const { values, handleInputChange, clearForm } = useForm(initialvalues);
+  const history = useHistory();
+  const { handleInputChange, clearForm, values } = useForm(initialvalues);
 
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    if (window.location.href.includes('localhost')) {
-      const URL = 'https://api-fake-json-server.herokuapp.com/categorias';
-      fetch(URL)
-        .then(async (respostaDoServer) => {
-          if (respostaDoServer.ok) {
-            const resposta = await respostaDoServer.json();
-            await setCategories(resposta);
-            return;
-          }
-          throw new Error('Não foi possível pegar os dados');
-        });
-    }
+    categoriasRepository
+      .getAll()
+      .then((categoriasFromServer) => {
+        setCategories(categoriasFromServer);
+      });
   }, []);
 
   const handleOnSubmit = async (event) => {
@@ -43,6 +39,16 @@ function CadastroCategoria() {
         ...categories,
         values,
       ]);
+
+      categoriasRepository.create({
+        titulo: values.titulo,
+        descricao: values.descricao,
+        cor: values.cor,
+      })
+        .then(() => {
+          console.log('Cadastrou com sucesso!');
+          history.push('/');
+        });
 
       clearForm();
     }
