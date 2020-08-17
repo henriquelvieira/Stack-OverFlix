@@ -1,0 +1,10 @@
+.tableDark {
+    background-color: var(--background);
+  }
+  
+.tableDark thead {
+    background-color: #53585D;
+    color: var(--white);
+    border-bottom: 3px solid var(--primary);
+    border-top: 0px solid var(--primary);
+  }

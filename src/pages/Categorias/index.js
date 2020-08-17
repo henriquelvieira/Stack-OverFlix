@@ -12,6 +12,7 @@ import Button from '../../components/Button';
 import ModalVerticallyCentered from '../../components/ModalVerticallyCentered';
 import CadastroCategoria from '../../components/FormCadastroCategoria/index';
 
+import './styles.css';
 
 function Categorias() {
   const [categories, setCategories] = useState([]);
@@ -30,32 +31,30 @@ function Categorias() {
     <Layout>
       <Container>
         <h3>Categorias:</h3>
+        <br />
 
-        <table>
+        <table className="table table-hover table-dark tableDark">
           <thead>
             <tr>
-              <td>Nome</td>
-              <td>Descrição</td>
-              <td>Editar</td>
-              <td>Remover</td>
+              <th scope="col">id</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Descrição</th>
+              <th scope="col">Editar</th>
+              <th scope="col">Remover</th>
             </tr>
           </thead>
           <tbody>
             {categories.map((categorie) => (
               <tr>
-                <td key={`id_${categorie.id}`}>{categorie.titulo}</td>
+                <th key={`id_${categorie.id}`} scope="row">{categorie.id}</th>
+                <td>{categorie.titulo}</td>
                 <td>{categorie.descricao}</td>
-                <td />
                 <td />
                 <td />
               </tr>
             ))}
           </tbody>
         </table>
-
-        <Link to="/">
-          Ir para home
-        </Link>
 
         <Button
           as={Link}
