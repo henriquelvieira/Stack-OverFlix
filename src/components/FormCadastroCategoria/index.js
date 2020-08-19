@@ -1,22 +1,25 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 // Components
 import FormField from '../FormField';
 
 import useForm from '../../hooks/useForm';
+import useAlert from '../../hooks/useAlert';
+import useServerState from '../../hooks/useServerState';
 
 import categoriasRepository from '../../repositories/categorias';
 
-function FormCadastroCategoria() {
+function FormCadastroCategoria({ handleClose }) {
   const initialvalues = {
     titulo: '',
     descricao: '',
     cor: '',
   };
 
-  const history = useHistory();
   const { handleInputChange, clearForm, values } = useForm(initialvalues);
+  const { serverState, setServerState } = useServerState();
+  const { setAlertOpen, Alert } = useAlert(serverState);
 
   const [categories, setCategories] = useState([]);
 
@@ -35,8 +38,7 @@ function FormCadastroCategoria() {
         cor: values.cor,
       })
         .then(() => {
-          console.log('Cadastrou com sucesso!');
-          history.push('/');
+          handleClose(true);
         });
 
       clearForm();
@@ -76,6 +78,8 @@ function FormCadastroCategoria() {
         <button type="submit" className="ModalButton">
           Cadastrar
         </button>
+        <button type="button" className="ModalButton" onClick={() => handleClose(false)}>Cancelar</button>
+        {serverState && <Alert />}
 
       </form>
 
@@ -83,5 +87,10 @@ function FormCadastroCategoria() {
 
   );
 }
+
+FormCadastroCategoria.propTypes = {
+  handleClose: PropTypes.func.isRequired,
+
+};
 
 export default FormCadastroCategoria;

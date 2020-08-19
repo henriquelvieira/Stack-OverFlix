@@ -8,13 +8,13 @@ async function create(objetoDoVideo) {
     .then(async (response) => {
       const vStatusRetorno = JSON.stringify(response.status, null, 2);
 
-      if (vStatusRetorno === '200') {
+      if (vStatusRetorno === '201') {
         const resposta = await response.data;
         return resposta;
       }
     })
     .catch((error) => {
-      console.log(error);
+      return error.response.data.error;
     });
 }
 
@@ -35,7 +35,6 @@ async function getAllWithVideos() {
     const vStatusRetorno = JSON.stringify(response.status, null, 2);
     if (vStatusRetorno === '200') {
       const resposta = await response.data;
-      console.log(resposta);
       return resposta;
     }
   }).catch((error) => {
