@@ -19,7 +19,7 @@ function Menu({ showButtonNewVideo }) {
   const handleCloseModal = (loadingData) => {
     handleHide();
     setReload(true);
-    alert('aqui ' + reload);
+    //alert('aqui ' + reload);
     // { loadingData && setReaload(true) }
   };
 

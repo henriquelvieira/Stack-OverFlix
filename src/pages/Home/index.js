@@ -49,13 +49,16 @@ function Home() {
             </div>
           );
         }
+        if (dadosIniciais[indice].videos.length > 0) {
+          return (
 
-        return (
-          <Carousel
-            key={categoria.id}
-            category={categoria}
-          />
-        );
+            <Carousel
+              key={categoria.id}
+              category={categoria}
+            />
+
+          );
+        }
       })}
 
     </Layout>
