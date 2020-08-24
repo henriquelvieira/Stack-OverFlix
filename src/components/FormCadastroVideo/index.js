@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-import useModal from '../../hooks/useModal';
 import useForm from '../../hooks/useForm';
+import useAlert from '../../hooks/useAlert';
+import useServerState from '../../hooks/useServerState';
 
 import FormField from '../FormField';
-import Button from '../Button';
 
 import videosRepository from '../../repositories/videos';
 import categoriasRepository from '../../repositories/categorias';
@@ -13,20 +14,18 @@ import categoriasRepository from '../../repositories/categorias';
 // Libs p/ Formulário
 import validaForm from './validation';
 
-function FormCadastroVideo() {
+function FormCadastroVideo({ handleClose }) {
   const initialvalues = {
     titulo: '',
     url: '',
     categoria: '',
   };
 
-  const history = useHistory();
-
   const [categorias, setCategorias] = useState([]);
   const categoryTitles = categorias.map(({ titulo }) => titulo);
   const { handleInputChange, clearForm, values } = useForm(initialvalues);
-
-
+  const { serverState, setServerState } = useServerState();
+  const { setAlertOpen, Alert } = useAlert(serverState);
 
   useEffect(() => {
     categoriasRepository
@@ -48,8 +47,8 @@ function FormCadastroVideo() {
         categoriaId: categoriaEscolhida.id,
       })
         .then(() => {
+          handleClose(true);
           console.log('Cadastrou com sucesso!');
-          history.push('/');
         });
 
       clearForm();
@@ -86,6 +85,8 @@ function FormCadastroVideo() {
         <button type="submit" className="ModalButton">
           Cadastrar
         </button>
+        <button type="button" className="ModalButton" onClick={() => handleClose(true)}>Cancelar</button>
+        {serverState && <Alert />}
 
       </form>
 
@@ -100,5 +101,10 @@ function FormCadastroVideo() {
 
   );
 }
+
+FormCadastroVideo.propTypes = {
+  handleClose: PropTypes.func.isRequired,
+
+};
 
 export default FormCadastroVideo;

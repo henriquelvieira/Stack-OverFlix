@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 // Components
 import Layout from '../../components/Layout';
+import useReload from '../../hooks/useReload';
 
 // import dadosIniciais from '../../data/dados_iniciais.json';
 import BannerMain from '../../components/BannerMain';
@@ -10,11 +11,11 @@ import categoriasRepository from '../../repositories/categorias';
 
 import ProgressLinear from '../../components/ProgressLinear';
 
-
 function Home() {
   const [dadosIniciais, setDadosIniciais] = useState([]);
+  // const [loading, setLoading] = useState(true);
+  const { reload, setReaload } = useReload();
   // const IdCategorieMain = Math.floor(Math.random() * (dadosIniciais.length));
-
 
   useEffect(() => {
     categoriasRepository.getAllWithVideos()
@@ -24,7 +25,7 @@ function Home() {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  }, [reload]);
 
   return (
 
