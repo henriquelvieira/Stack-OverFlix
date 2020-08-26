@@ -24,7 +24,6 @@ function VideoCard({ videoTitle, videoURL, categoryColor }) {
     <>
       <VideoCardContainer
         url={image}
-        // href={videoURL}
         target="_blank"
         onClick={() => handleShow()}
         style={{ borderColor: categoryColor || 'red' }}

@@ -15,7 +15,26 @@ function Home() {
   const [dadosIniciais, setDadosIniciais] = useState([]);
   // const [loading, setLoading] = useState(true);
   const { reload, setReaload } = useReload();
-  // const IdCategorieMain = Math.floor(Math.random() * (dadosIniciais.length));
+
+  function BannerRandom(vArray) {
+    const IdCategorieMain = Math.floor(Math.random() * (vArray.length));
+
+    const bannerMain = vArray.map((categoria, indice) => {
+      if (indice === IdCategorieMain) {
+        return (
+          <div key={categoria.id}>
+            <BannerMain
+              videoTitle={dadosIniciais[IdCategorieMain].videos[0].titulo}
+              url={dadosIniciais[IdCategorieMain].videos[0].url}
+              videoDescription={dadosIniciais[IdCategorieMain].videos[0].description}
+            />
+          </div>
+        );
+      }
+    });
+
+    return bannerMain;
+  }
 
   useEffect(() => {
     categoriasRepository.getAllWithVideos()
@@ -33,22 +52,9 @@ function Home() {
 
       {dadosIniciais.length === 0 && (<ProgressLinear />)}
 
+      {dadosIniciais.length > 0 && BannerRandom(dadosIniciais)}
+
       {dadosIniciais.map((categoria, indice) => {
-        if (indice === 0) {
-          return (
-            <div key={categoria.id}>
-              <BannerMain
-                videoTitle={dadosIniciais[0].videos[0].titulo}
-                url={dadosIniciais[0].videos[0].url}
-                videoDescription={dadosIniciais[0].videos[0].description}
-              />
-              <Carousel
-                ignoreFirstVideo
-                category={dadosIniciais[0]}
-              />
-            </div>
-          );
-        }
         if (dadosIniciais[indice].videos.length > 0) {
           return (
 
