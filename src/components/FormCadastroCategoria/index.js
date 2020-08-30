@@ -9,6 +9,7 @@ import useAlert from '../../hooks/useAlert';
 import useServerState from '../../hooks/useServerState';
 
 import categoriasRepository from '../../repositories/categorias';
+import Sleep from '../../hooks/Sleep';
 
 function FormCadastroCategoria({ handleClose }) {
   const initialvalues = {
@@ -18,10 +19,15 @@ function FormCadastroCategoria({ handleClose }) {
   };
 
   const { handleInputChange, clearForm, values } = useForm(initialvalues);
+  const [categories, setCategories] = useState([]);
   const { serverState, setServerState } = useServerState();
   const { setAlertOpen, Alert } = useAlert(serverState);
 
-  const [categories, setCategories] = useState([]);
+
+  const handleServerResponse = (ok, msg) => {
+    setAlertOpen(true);
+    setServerState({ ok, msg });
+  };
 
   const handleOnSubmit = async (event) => {
     event.preventDefault();
@@ -37,11 +43,15 @@ function FormCadastroCategoria({ handleClose }) {
         descricao: values.descricao,
         cor: values.cor,
       })
-        .then(() => {
+        .then(async () => {
+          handleServerResponse(true, 'Categoria cadastrada com sucesso!');
+          await Sleep(1000);
           handleClose(true);
+          clearForm();
+        })
+        .catch((err) => {
+          handleServerResponse(false, 'Falha ao Cadastrar a Categoria');
         });
-
-      clearForm();
     }
   };
 
@@ -79,7 +89,8 @@ function FormCadastroCategoria({ handleClose }) {
           Cadastrar
         </button>
         <button type="button" className="ModalButton" onClick={() => handleClose(false)}>Cancelar</button>
-        {serverState && <Alert />}
+
+        {serverState && <Alert msg={serverState.msg} status={serverState.ok} />}
 
       </form>
 

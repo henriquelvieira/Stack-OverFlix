@@ -50,8 +50,6 @@ function Categorias() {
           Nova Categoria
         </Button>
 
-
-
         <div className="table-responsive">
 
           <table className="table table-hover table-dark tableDark">
@@ -91,6 +89,8 @@ function Categorias() {
         </handleCRUD.Provider>
 
       </Container>
+
+
 
     </Layout>
 

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import useForm from '../../hooks/useForm';
 import useAlert from '../../hooks/useAlert';
 import useServerState from '../../hooks/useServerState';
+import Sleep from '../../hooks/Sleep';
 
 import FormField from '../FormField';
 
@@ -27,6 +28,11 @@ function FormCadastroVideo({ handleClose }) {
   const { serverState, setServerState } = useServerState();
   const { setAlertOpen, Alert } = useAlert(serverState);
 
+  const handleServerResponse = (ok, msg) => {
+    setAlertOpen(true);
+    setServerState({ ok, msg });
+  };
+
   useEffect(() => {
     categoriasRepository
       .getAll()
@@ -46,12 +52,15 @@ function FormCadastroVideo({ handleClose }) {
         url: values.url,
         categoriaId: categoriaEscolhida.id,
       })
-        .then(() => {
+        .then(async () => {
+          handleServerResponse(true, 'Video cadastrada com sucesso!');
+          await Sleep(1000);
           handleClose(true);
-          console.log('Cadastrou com sucesso!');
+          clearForm();
+        })
+        .catch((err) => {
+          handleServerResponse(false, 'Falha ao Cadastrar o Video');
         });
-
-      clearForm();
     }
   };
 
