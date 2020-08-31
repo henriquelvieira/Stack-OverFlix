@@ -31,9 +31,9 @@ function Categorias() {
     setServerState({ ok, msg });
   };
 
-  useEffect(async () => {
+  useEffect(() => {
     handleHide();
-    await categoriasRepository.getAll()
+    categoriasRepository.getAll()
       .then((categoriasFromServer) => {
         setCategories(categoriasFromServer);
         setLoading(false);

@@ -14,7 +14,7 @@ import categoriasRepository from '../../repositories/categorias';
 
 function Home() {
   const [dadosIniciais, setDadosIniciais] = useState([]);
-  // const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const { reload, setReaload } = useReload();
 
   const { serverState, setServerState } = useServerState();
@@ -54,6 +54,7 @@ function Home() {
         setDadosIniciais(null);
         handleServerResponse(false, 'Falha ao carregar os vídeos');
       });
+    setLoading(false);
   }, [reload]);
 
   return (
@@ -62,7 +63,7 @@ function Home() {
 
       {serverState && <Alert msg={serverState.msg} status={serverState.ok} />}
 
-      {dadosIniciais && (<ProgressLinear />)}
+      {loading && (<ProgressLinear />)}
 
       {dadosIniciais && BannerRandom(dadosIniciais)}
 
