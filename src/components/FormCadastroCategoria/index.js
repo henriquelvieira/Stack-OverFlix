@@ -7,9 +7,9 @@ import FormField from '../FormField';
 import useForm from '../../hooks/useForm';
 import useAlert from '../../hooks/useAlert';
 import useServerState from '../../hooks/useServerState';
+import Sleep from '../../hooks/Sleep';
 
 import categoriasRepository from '../../repositories/categorias';
-import Sleep from '../../hooks/Sleep';
 
 function FormCadastroCategoria({ handleClose }) {
   const initialvalues = {

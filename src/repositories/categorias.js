@@ -26,7 +26,7 @@ function getAll() {
       return resposta;
     }
   }).catch((error) => {
-    console.log(error);
+    return error.response.data.error;
   });
 }
 
@@ -38,7 +38,7 @@ async function getAllWithVideos() {
       return resposta;
     }
   }).catch((error) => {
-    console.log(error);
+    return error.response.data.error;
   });
 }
 

@@ -2,18 +2,15 @@ import React, { useEffect, useState } from 'react';
 
 // Components
 import Layout from '../../components/Layout';
+import BannerMain from '../../components/BannerMain';
+import Carousel from '../../components/Carousel';
+import ProgressLinear from '../../components/ProgressLinear';
+
 import useReload from '../../hooks/useReload';
 import useAlert from '../../hooks/useAlert';
 import useServerState from '../../hooks/useServerState';
 
-// import dadosIniciais from '../../data/dados_iniciais.json';
-import BannerMain from '../../components/BannerMain';
-import Carousel from '../../components/Carousel';
 import categoriasRepository from '../../repositories/categorias';
-
-import { Alerts } from '../../components/Alerts';
-
-import ProgressLinear from '../../components/ProgressLinear';
 
 function Home() {
   const [dadosIniciais, setDadosIniciais] = useState([]);
@@ -48,18 +45,15 @@ function Home() {
     return bannerMain;
   }
 
-  useEffect(() => {
-    categoriasRepository.getAllWithVideos()
+  useEffect(async () => {
+    await categoriasRepository.getAllWithVideos()
       .then((categoriasComVideos) => {
         setDadosIniciais(categoriasComVideos);
       })
-      .catch((err) => {
-        setDadosIniciais('');
+      .catch(() => {
+        setDadosIniciais(null);
         handleServerResponse(false, 'Falha ao carregar os vídeos');
-        console.log(err.message);
-        alert(err.message);
       });
-
   }, [reload]);
 
   return (
@@ -67,12 +61,12 @@ function Home() {
     <Layout showButtonNewVideo showFooter>
 
       {serverState && <Alert msg={serverState.msg} status={serverState.ok} />}
-      
-      {dadosIniciais.length === 0 && (<ProgressLinear />)}
 
-      {dadosIniciais.length > 0 && BannerRandom(dadosIniciais)}
+      {dadosIniciais && (<ProgressLinear />)}
 
-      {dadosIniciais.map((categoria, indice) => {
+      {dadosIniciais && BannerRandom(dadosIniciais)}
+
+      {dadosIniciais && dadosIniciais.map((categoria, indice) => {
         if (dadosIniciais[indice].videos.length > 0) {
           return (
 

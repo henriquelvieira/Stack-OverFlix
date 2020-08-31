@@ -53,7 +53,7 @@ function FormCadastroVideo({ handleClose }) {
         categoriaId: categoriaEscolhida.id,
       })
         .then(async () => {
-          handleServerResponse(true, 'Video cadastrada com sucesso!');
+          handleServerResponse(true, 'Video cadastrado com sucesso!');
           await Sleep(1000);
           handleClose(true);
           clearForm();
